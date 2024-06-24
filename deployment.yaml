@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: react-app-deployment
+  name: webapp-eastus1-dev-2048-game
 spec:
   replicas: 3
   selector:
@@ -14,7 +14,7 @@ spec:
         app: react-app
     spec:
       containers:
-        - name: react-app-container
+        - name: webapp-eastus1-dev-2048-game-conatiner
           image: 127355576263.dkr.ecr.us-east-1.amazonaws.com/ecr-eastus1-dev-salesforce:8a054da5380cd4f5ca2ed606cc4cc86fd2d93665
           ports:
             - containerPort: 3000
@@ -23,7 +23,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: react-app-service
+  name: service-eastus1-dev-2048-game
 spec:
   selector:
     app: react-app
