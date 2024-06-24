@@ -17,7 +17,6 @@ spec:
           image: 127355576263.dkr.ecr.us-east-1.amazonaws.com/ecr-eastus1-dev-salesforce:8a054da5380cd4f5ca2ed606cc4cc86fd2d93665  # Use your actual Docker image name and tag
           ports:
             - containerPort: 3000  # The port your React app is listening on
-
 ---
 apiVersion: v1
 kind: Service
@@ -30,5 +29,4 @@ spec:
     - protocol: TCP
       port: 80  # The port exposed by the service within the cluster
       targetPort: 3000  # The port your React app is listening on inside the pod
-  type: LoadBalancer
-
+  type: LoadBalancer  # Ensure your environment supports this service type
